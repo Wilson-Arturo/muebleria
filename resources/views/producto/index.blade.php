@@ -22,7 +22,7 @@
 <tbody>
     @foreach ($productos as $producto)
 <tr>
-    <td>{{ $producto->id_productos}}</td>
+    <td>{{ $producto->id}}</td>
     <td>{{ $producto->id_categoria}}</td>
     <td>{{ $producto->nombre}}</td>
     <td>{{ $producto->costo}}</td>
@@ -30,8 +30,8 @@
     <td>{{ $producto->codigo_barras}}</td>
     <td>{{ $producto->stock}}</td>
     <td>
-         <form action="{{ route ('productos.destroy',$producto->id_productos)}}" method="POST">
-         <a href="/productos/{{ $producto->id_productos}}/edit" class="btn btn-info">Editar</a>
+         <form action="{{ route ('productos.destroy',$producto->id)}}" method="POST">
+         <a href="/productos/{{ $producto->id}}/edit" class="btn btn-info">Editar</a>
              @csrf
              @method('DELETE')
              <button type="submit" class="btn btn-danger">Borrar</button>
